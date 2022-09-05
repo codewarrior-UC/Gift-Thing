@@ -136,7 +136,7 @@ export class Events extends Component {
                       <td>{emp.first_name}</td>
                       <td>{emp.last_name}</td>
                       <td>
-                        <Moment format="d-mm-yyyy">
+                        <Moment format="DD-MM-YYYY">
                           {emp.aniversary_date}
                         </Moment>
                       </td>
@@ -187,7 +187,7 @@ export class Events extends Component {
                       <td>{emp.first_name}</td>
                       <td>{emp.last_name}</td>
                       <td>
-                        <Moment format="d-mm-yyyy">{emp.joining_date}</Moment>
+                      <Moment format="DD-MM-YYYY">{emp.joining_date}</Moment>
                       </td>
                       <td>{emp.joining_month}</td>
                       <td>

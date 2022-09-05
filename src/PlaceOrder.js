@@ -85,6 +85,20 @@ handelClick=()=> {
                 </div>
 
 
+            {/*  <div className="col-md-6">
+                  <fieldset>
+                    <input                     
+                      type="text"
+                      className="form-control"
+                      ref={c=>this.uidbox=c}
+                      placeholder="user_id..."
+                      style={{ color: "black" }}
+                       required
+                    />
+                  </fieldset>
+                </div> */}
+
+
                 <div className="col-md-6">
                   <fieldset>
                     <input                     
