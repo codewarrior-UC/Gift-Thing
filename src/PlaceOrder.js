@@ -20,6 +20,7 @@ export default class PlaceOrder extends React.Component{
         product_type : this.ptbox.value,
         company_id : this.cidbox.value,
         planned_date:this.pdbox.value,
+        _id:this.uidbox.value,
      }
   var pro = AdminService.placeorder(ob)
       pro.then(response=>response.json())
@@ -33,12 +34,12 @@ export default class PlaceOrder extends React.Component{
 })   
 }
 
-handelClick=()=> {
-  setTimeout(()=>{
-      window.location.reload(1);
-  }, 2500);
-  console.log('page to reload')
-}
+// handelClick=()=> {
+//   setTimeout(()=>{
+//       window.location.reload(1);
+//   }, 2500);
+//   console.log('page to reload')
+// }
 
   render()
   {
@@ -63,9 +64,9 @@ handelClick=()=> {
                       type="text"
                       className="form-control"
                       ref={c=>this.qbox=c}
-                      defaultValue="1"
+                      // defaultValue="1"
                       placeholder="quantity..."
-                      style={{ color: "black" }}
+                      style={{ color: "black", background:"#FFFFED" }}
                       required
                     />
                   </fieldset>
@@ -78,7 +79,7 @@ handelClick=()=> {
                       className="form-control"
                       ref={c=>this.cbox=c}
                       placeholder="comments..."
-                      style={{ color: "black" }}
+                      style={{ color: "black" , background:"#FFFFED"}}
                        required
                     />
                   </fieldset>
@@ -106,7 +107,7 @@ handelClick=()=> {
                       className="form-control"
                       ref={c=>this.ptbox=c}
                       placeholder="product_type..."
-                      style={{ color: "black" }}
+                      style={{ color: "black", background:"#FFFFED"}}
                        required
                     />
                   </fieldset>
@@ -114,41 +115,47 @@ handelClick=()=> {
 
                 <div className="col-md-6">
                   <fieldset>
+                    {/* <label for="planned_date"  style={{ color: "black", float: "left" }}>Planned date</label> */}
                     <input
+                    id="planned_date"
                       type="date"
                       className="form-control"
                       ref={c=>this.pdbox=c}
+                      // onfocus="(this.type=’date’)"
+                      // onblur="(this. type='text')"
                       placeholder="planned_date..."
-                      style={{ color: "black" }}
+                      style={{ color: "black" , background:"#FFFFED"}}
                        required
                     />
                   </fieldset>
                 </div>
                 <div className="col-md-6">
-                  <fieldset>
-                    <input
-                      type="hidden"
-                      className="form-control"
-                      ref={c=>this.cidbox=c}
-                      value= {localStorage.getItem("companyId")}
-                      placeholder="company_id..."
-                      style={{ color: "black" }}
-                       required
-                    />
-                  </fieldset>
-                </div>
-
-                {/* <div className="col-md-6">
                   <fieldset>
                     <input
                       type="text"
                       className="form-control"
-                      ref={c=>this.sbox=c}
-                      placeholder="status..."
+                      ref={c=>this.cidbox=c}
+                      value= {localStorage.getItem("companyId")}
+                      placeholder="company_id..."
+                      style={{ color: "black", background:"#FFFFED",}}
                        required
                     />
                   </fieldset>
-                </div> */}
+                </div>
+
+                <div className="col-md-6">
+                  <fieldset>
+                    <input
+                      type="text"
+                      className="form-control"
+                      ref={c=>this.uidbox=c}
+                      placeholder="User ID..."
+
+                      style={{ color: "black", background:"#FFFFED",}}
+                       required
+                    />
+                  </fieldset>
+                </div>
                 
 
                 <div className="col-md-12">
